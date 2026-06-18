@@ -1,0 +1,170 @@
+=== JOURNAL DES PRODUCTIONS ===
+[20:05:55] [P1] a produit : 100
+[20:05:55] [P2] a produit : 200
+[20:05:55] [P2] a produit : 201
+[20:05:55] [P2] a produit : 202
+[20:05:55] [P2] a produit : 203
+[20:05:55] [P1] a produit : 101
+[20:05:55] [P2] a produit : 204
+[20:05:55] [P1] a produit : 102
+[20:05:55] [P1] a produit : 103
+[20:05:56] [P2] a produit : 205
+[20:05:56] [P1] a produit : 104
+[20:05:57] [P2] a produit : 206
+[20:05:57] [P1] a produit : 105
+[20:05:57] [P2] a produit : 207
+
+=== JOURNAL DES CONSOMMATIONS ===
+[20:05:55] [C2] a consommé : 100
+[20:05:55] [C1] a consommé : 200
+[20:05:55] [C1] a consommé : 201
+[20:05:55] [C2] a consommé : 202
+[20:05:56] [C2] a consommé : 203
+[20:05:56] [C1] a consommé : 101
+[20:05:57] [C2] a consommé : 204
+[20:05:57] [C2] a consommé : 102
+[20:05:57] [C1] a consommé : 103
+
+=== RAPPORT FINAL ===
+JOURNAL D'ACTIVITÉ EN TEMPS RÉEL
+------------------------------------------------
+[20:05:55.013] [P1] ENTRE en section critique (synchronized)
+[20:05:55.021] [P1] DÉPOSE l'article 100  (tampon : 1/5)
+[20:05:55.025] [P1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.026] [C2] ENTRE en section critique (synchronized)
+[20:05:55.026] [P1] sleep(476 ms) : simule le temps de production
+[20:05:55.026] [C2] CONSOMME l'article 100  (tampon : 0/5)
+[20:05:55.027] [C2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.028] [C1] ENTRE en section critique (synchronized)
+[20:05:55.028] [C2] sleep(572 ms) : simule le temps de traitement
+[20:05:55.033] [C1] tampon VIDE -> wait(500 ms) : libère le verrou et dort
+[20:05:55.033] [P2] ENTRE en section critique (synchronized)
+[20:05:55.033] [P2] DÉPOSE l'article 200  (tampon : 1/5)
+[20:05:55.033] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.034] [P2] sleep(34 ms) : simule le temps de production
+[20:05:55.034] [C1] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:55.034] [C1] CONSOMME l'article 200  (tampon : 0/5)
+[20:05:55.034] [C1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.034] [C1] sleep(15 ms) : simule le temps de traitement
+[20:05:55.052] [C1] ENTRE en section critique (synchronized)
+[20:05:55.052] [C1] tampon VIDE -> wait(500 ms) : libère le verrou et dort
+[20:05:55.069] [P2] ENTRE en section critique (synchronized)
+[20:05:55.069] [P2] DÉPOSE l'article 201  (tampon : 1/5)
+[20:05:55.069] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.069] [P2] sleep(147 ms) : simule le temps de production
+[20:05:55.069] [C1] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:55.069] [C1] CONSOMME l'article 201  (tampon : 0/5)
+[20:05:55.069] [C1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.069] [C1] sleep(1473 ms) : simule le temps de traitement
+[20:05:55.218] [P2] ENTRE en section critique (synchronized)
+[20:05:55.219] [P2] DÉPOSE l'article 202  (tampon : 1/5)
+[20:05:55.219] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.219] [P2] sleep(199 ms) : simule le temps de production
+[20:05:55.419] [P2] ENTRE en section critique (synchronized)
+[20:05:55.419] [P2] DÉPOSE l'article 203  (tampon : 2/5)
+[20:05:55.420] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.420] [P2] sleep(156 ms) : simule le temps de production
+[20:05:55.504] [P1] ENTRE en section critique (synchronized)
+[20:05:55.504] [P1] DÉPOSE l'article 101  (tampon : 3/5)
+[20:05:55.504] [P1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.504] [P1] sleep(307 ms) : simule le temps de production
+[20:05:55.578] [P2] ENTRE en section critique (synchronized)
+[20:05:55.578] [P2] DÉPOSE l'article 204  (tampon : 4/5)
+[20:05:55.578] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.578] [P2] sleep(260 ms) : simule le temps de production
+[20:05:55.600] [C2] ENTRE en section critique (synchronized)
+[20:05:55.600] [C2] CONSOMME l'article 202  (tampon : 3/5)
+[20:05:55.600] [C2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.600] [C2] sleep(547 ms) : simule le temps de traitement
+[20:05:55.813] [P1] ENTRE en section critique (synchronized)
+[20:05:55.813] [P1] DÉPOSE l'article 102  (tampon : 4/5)
+[20:05:55.813] [P1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.813] [P1] sleep(16 ms) : simule le temps de production
+[20:05:55.830] [P1] ENTRE en section critique (synchronized)
+[20:05:55.830] [P1] DÉPOSE l'article 103  (tampon : 5/5)
+[20:05:55.830] [P1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:55.831] [P1] sleep(18 ms) : simule le temps de production
+[20:05:55.840] [P2] ENTRE en section critique (synchronized)
+[20:05:55.840] [P2] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:55.850] [P1] ENTRE en section critique (synchronized)
+[20:05:55.850] [P1] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:56.149] [C2] ENTRE en section critique (synchronized)
+[20:05:56.149] [C2] CONSOMME l'article 203  (tampon : 4/5)
+[20:05:56.149] [C2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:56.149] [C2] sleep(948 ms) : simule le temps de traitement
+[20:05:56.150] [P2] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:56.150] [P2] DÉPOSE l'article 205  (tampon : 5/5)
+[20:05:56.150] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:56.151] [P2] sleep(241 ms) : simule le temps de production
+[20:05:56.151] [P1] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:56.151] [P1] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:56.393] [P2] ENTRE en section critique (synchronized)
+[20:05:56.394] [P2] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:56.544] [C1] ENTRE en section critique (synchronized)
+[20:05:56.544] [C1] CONSOMME l'article 101  (tampon : 4/5)
+[20:05:56.544] [C1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:56.544] [C1] sleep(1280 ms) : simule le temps de traitement
+[20:05:56.544] [P1] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:56.544] [P1] DÉPOSE l'article 104  (tampon : 5/5)
+[20:05:56.544] [P1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:56.544] [P1] sleep(155 ms) : simule le temps de production
+[20:05:56.544] [P2] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:56.544] [P2] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:56.701] [P1] ENTRE en section critique (synchronized)
+[20:05:56.701] [P1] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:57.098] [C2] ENTRE en section critique (synchronized)
+[20:05:57.098] [C2] CONSOMME l'article 204  (tampon : 4/5)
+[20:05:57.098] [C2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:57.099] [C2] sleep(567 ms) : simule le temps de traitement
+[20:05:57.099] [P2] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:57.099] [P2] DÉPOSE l'article 206  (tampon : 5/5)
+[20:05:57.099] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:57.099] [P2] sleep(453 ms) : simule le temps de production
+[20:05:57.099] [P1] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:57.099] [P1] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:57.554] [P2] ENTRE en section critique (synchronized)
+[20:05:57.554] [P2] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:57.667] [C2] ENTRE en section critique (synchronized)
+[20:05:57.667] [C2] CONSOMME l'article 102  (tampon : 4/5)
+[20:05:57.668] [C2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:57.668] [C2] sleep(484 ms) : simule le temps de traitement
+[20:05:57.668] [P1] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:57.668] [P1] DÉPOSE l'article 105  (tampon : 5/5)
+[20:05:57.668] [P1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:57.669] [P1] sleep(294 ms) : simule le temps de production
+[20:05:57.669] [P2] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:57.669] [P2] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:57.827] [C1] ENTRE en section critique (synchronized)
+[20:05:57.827] [C1] CONSOMME l'article 103  (tampon : 4/5)
+[20:05:57.827] [C1] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:57.827] [C1] sleep(921 ms) : simule le temps de traitement
+[20:05:57.827] [P2] RÉVEILLÉ -> reprend le verrou et re-teste la condition
+[20:05:57.827] [P2] DÉPOSE l'article 207  (tampon : 5/5)
+[20:05:57.827] [P2] notifyAll() -> réveille les threads en attente, puis SORT
+[20:05:57.827] [P2] sleep(454 ms) : simule le temps de production
+[20:05:57.964] [P1] ENTRE en section critique (synchronized)
+[20:05:57.964] [P1] tampon PLEIN -> wait() : libère le verrou et dort
+[20:05:58.008] [C1] s'arrête (4 articles consommés)
+[20:05:58.008] [C2] s'arrête (5 articles consommés)
+
+BILAN GLOBAL
+------------------------------------------------
+Articles produits au total      : 14
+Articles consommés au total     : 9
+Articles restant dans le tampon : 5
+
+DÉTAIL PAR PRODUCTEUR
+------------------------------------------------
+Le producteur 1 a produit 6 article(s).
+Le producteur 2 a produit 8 article(s).
+
+DÉTAIL PAR CONSOMMATEUR
+------------------------------------------------
+Le consommateur 1 a consommé 4 article(s).
+Le consommateur 2 a consommé 5 article(s).
+
+ÉTAT FINAL
+------------------------------------------------
+Il reste 5 article(s) non consommé(s) dans le tampon :
+la simulation a probablement été arrêtée manuellement.
+================================================

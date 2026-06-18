@@ -1,0 +1,70 @@
+=== JOURNAL DES PRODUCTIONS ===
+[12:30:52] [P1] a produit : 100
+[12:30:52] [P2] a produit : 200
+[12:30:52] [P2] a produit : 201
+[12:30:52] [P1] a produit : 101
+[12:30:52] [P2] a produit : 202
+[12:30:52] [P2] a produit : 203
+[12:30:52] [P1] a produit : 102
+[12:30:52] [P2] a produit : 204
+[12:30:52] [P1] a produit : 103
+[12:30:53] [P1] a produit : 104
+[12:30:54] [P2] a produit : 205
+[12:30:54] [P1] a produit : 105
+[12:30:55] [P2] a produit : 206
+[12:30:55] [P1] a produit : 106
+[12:30:55] [P1] a produit : 107
+[12:30:55] [P2] a produit : 207
+[12:30:55] [P1] a produit : 108
+[12:30:56] [P2] a produit : 208
+[12:30:57] [P1] a produit : 109
+[12:30:57] [P2] a produit : 209
+
+=== JOURNAL DES CONSOMMATIONS ===
+[12:30:52] [C2] a consommé : 100
+[12:30:52] [C1] a consommé : 200
+[12:30:52] [C2] a consommé : 201
+[12:30:52] [C1] a consommé : 101
+[12:30:53] [C2] a consommé : 202
+[12:30:54] [C1] a consommé : 203
+[12:30:54] [C2] a consommé : 102
+[12:30:55] [C2] a consommé : 204
+[12:30:55] [C1] a consommé : 103
+[12:30:55] [C2] a consommé : 104
+[12:30:55] [C2] a consommé : 205
+[12:30:55] [C1] a consommé : 105
+[12:30:56] [C2] a consommé : 206
+[12:30:57] [C1] a consommé : 106
+[12:30:57] [C2] a consommé : 107
+[12:30:57] [C1] a consommé : 207
+[12:30:57] [C1] a consommé : 108
+[12:30:58] [C2] a consommé : 208
+[12:30:58] [C1] a consommé : 109
+[12:30:59] [C2] a consommé : 209
+
+=== RAPPORT FINAL ===
+JOURNAL D'ACTIVITÉ EN TEMPS RÉEL
+------------------------------------------------
+(aucun événement enregistré)
+
+BILAN GLOBAL
+------------------------------------------------
+Articles produits au total      : 20
+Articles consommés au total     : 20
+Articles restant dans le tampon : 0
+
+DÉTAIL PAR PRODUCTEUR
+------------------------------------------------
+Le producteur 1 a produit 10 article(s).
+Le producteur 2 a produit 10 article(s).
+
+DÉTAIL PAR CONSOMMATEUR
+------------------------------------------------
+Le consommateur 1 a consommé 9 article(s).
+Le consommateur 2 a consommé 11 article(s).
+
+ÉTAT FINAL
+------------------------------------------------
+Tous les articles produits ont été consommés :
+la simulation s'est terminée normalement.
+================================================
